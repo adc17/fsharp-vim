@@ -80,10 +80,10 @@ function! GetFsharpIndent()
     let ind = indent(lnum)
     let lline = substitute(getline(lnum), '(\*.*\*)\s*$', '', '')
 
-    " Return double 'shiftwidth' after lines matching:
-    if lline =~ '^\s*|.*->\s*$'
-        return ind + &sw + &sw
-    endif
+    " " Return single 'shiftwidth' after lines matching:
+    " if lline =~ '^\s*|.*->\s*$'
+    "     return ind + &sw
+    " endif
 
     let line = getline(v:lnum)
 
